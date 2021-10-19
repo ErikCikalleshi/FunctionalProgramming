@@ -17,7 +17,6 @@ plus1 x = x + 1
   Menu       -- name of constructor
     Item
     Item
-    Item
 deriving Show
 
 data Item = -- name of type
