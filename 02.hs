@@ -33,7 +33,7 @@ checkMenu = Menu itemFP itemOO -}
 data Item = -- name of type
   Item      
     String    -- label name
-    String   --link
+    String    --link
   deriving Show 
 
 data Menu = -- name of type
@@ -44,5 +44,6 @@ data Menu = -- name of type
 
 
 itemFP = Item "Home" "http://cl-informatik.uibk.ac.at/teaching/ws21/fp"
+itemFP2 = Item "Proseminar" "http://cl-informatik.uibk.ac.at/teaching/ws21/fp/exercises.php?lan=de"
 itemOO = Item "Home" "https://lms.uibk.ac.at"
-checkMenu = Menu itemOO(Menu itemFP Empty)
+checkMenu = Menu itemOO(Menu itemFP(Menu itemFP2 Empty))
