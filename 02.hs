@@ -28,6 +28,8 @@ deriving Show
 itemFP = Item "Home" "http://cl-informatik.uibk.ac.at/teaching/ws21/fp"
 itemOO = Item "Home" "http://cl-informatik.uibk.ac.at/teaching/ws21/fp"
 checkMenu = Menu itemFP itemOO -}
+
+
 {-
 data Item = -- name of type
   Item      
