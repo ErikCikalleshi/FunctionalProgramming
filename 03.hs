@@ -19,9 +19,10 @@ sumList (Cons x xs) = x + sumList xs
 
 -- double2nd
 double2nd :: List -> List
-double2nd Empty = Empty;
-double2nd (Cons _ Empty) = list;
-double2nd (Cons x (Cons y xs)) = (Cons x (Cons(y*2) (double2nd(xs))));
+-- double2nd Empty = Empty
+-- double2nd (Cons _ Empty) = list
+double2nd (Cons x (Cons y xs)) = (Cons x (Cons(y*2) (double2nd(xs))))
+double2nd xs = xs;
 
 -- Exercise 3
 
@@ -45,7 +46,7 @@ lookupA (Assign x y EmptyA) z = (ite (x == z) y 0)
 lookupA (Assign x y xs) z  = (ite (x == z) y (lookupA xs z))
 
 eval :: Assignment -> Expr -> Integer
-eval assn (Number x) = x
+eval _ (Number x) = x
 eval assn (Negate e) = - eval assn e
 eval assn (Plus e1 e2) =  eval assn e1 + eval assn e2
 eval assn (Var s) = lookupA assn s 
