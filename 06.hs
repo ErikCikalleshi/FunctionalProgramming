@@ -71,7 +71,6 @@ fib' n
   | odd n = (fib'(div n 2))^2 + (fib'((div n 2) + 1))^2
 
 
-
 fibFast :: Integer -> Integer
 fibFast 0 = 0
 fibFast 1 = 1

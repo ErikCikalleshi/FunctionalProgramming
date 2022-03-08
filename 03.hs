@@ -97,6 +97,10 @@ data Student = Student
     Programme
 
 
+bar :: (a -> a) -> [a -> a] -> (a -> a)
+bar = foldr (\ z r -> r)
+
+
 f1 (Student name n _ (Teaching Math _)) = True
 f1 _  = False
 

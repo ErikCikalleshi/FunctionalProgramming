@@ -86,10 +86,12 @@ exprToString (Times x@(Plus _ _) y) = "(" ++ exprToString x ++ ") * " ++ exprToS
 exprToString (Times y x@(Plus _ _) ) = exprToString y ++ " * (" ++ exprToString x ++ ")" 
 exprToString (Times x y) = exprToString x ++ " * " ++ exprToString y
 
+data Type a = Empty | Node a Int (Type a) deriving Eq
 
+d = \x -> Node x x Empty
 
 -- Tests: Un-comment the desired test (and :reload) after you provided a corresponding solution.
--- testSuffixes = "Expected [[1,2,3],[2,3],[3],[]]; suffixes [1,2,3] returned " ++ show (suffixes [1,2,3] :: [[Int]])
+testSuffixes = "Expected [[1,2,3],[2,3],[3],[]]; suffixes [1,2,3] returned " ++ show (suffixes [1,2,3] :: [[Int]])
 -- testPrefixes = "Expected [[1,2,3],[1,2],[1],[]]; prefixes [1,2,3] returned " ++ show (prefixes [1,2,3] :: [[Int]])
 -- testMenuP = "Expected Right [[1,2],[1],[]]; menu 'p' [1,2] returned " ++ show (menu 'p' [1,2] :: Either String [[Int]])
 -- testMenuS = "Expected Right [[1,2],[2],[]]; menu 's' [1,2] returned " ++ show (menu 's' [1,2] :: Either String [[Int]])

@@ -10,8 +10,22 @@ average x y = (x + y)/2
     as x for the average with z 
 -}
 
-averageVolume r1 r2 = average (volume r1)(volume r2) 
-  
+averageVolume r1 r2 = average (volume r1)(volume r2)
+
+twoListFun (x:xs) ys = twoListFun xs $ take 5 (x : ys)
+
+
+fun :: Eq a => [Maybe a] -> Maybe a -> Maybe a
+fun x y
+  | y == Nothing = foldr g y x
+  | otherwise = h x
+
+g :: a -> b -> b
+test x = foldr (\ x y -> x . y . y) [1,2,3,4] x
+g = undefined
+h :: [a] -> a
+h = undefined
+
 
 -- the following tests can be used by you, once you have implemented your functions,
 -- for testing, just invoke test1, test2, ... in ghci

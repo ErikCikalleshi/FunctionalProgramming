@@ -1,0 +1,5 @@
+++ : concatenates two strings
+show: converts values to string
+deriving (Show, Eq)
+error: throws error 
+append: [1,5] [3] -> [1,5,3]
